@@ -16,8 +16,8 @@ class LocalReplay:
         h = self.gamescreen[1]
         w = self.totw
         self.screen = Surface(w, h)
-        self.path = "\\games\\"
-        self.exp = Explorer(self.path)
+        self.path = "Games/"
+        self.exp = Explorer("/" + self.path)
         self.exp_p = (1300, 400)
         self.exp.Position(self.exp_p[0], self.exp_p[1])
         self.game = None
@@ -26,9 +26,11 @@ class LocalReplay:
         self.exp.Update(event)
         w, h = self.gamescreen
         filen = self.exp.File()
+        print(type(filen), filen)
         fullpath = self.path + filen
-        print(fullpath)
+        #print(fullpath)
         self.game = Game(fullpath, w, h)
+        self.game.Generate(self.screen)
         foc_player = self.game.GetMe()
         self.game.Follow(foc_player, w, h)
 
@@ -59,8 +61,10 @@ def main():
                 win.Quit()
             if type(event) == tuple:
                 if event[0] == 1:
-                    replau.CheckFile(event)
+                    replay.CheckFile(event)
+            win.Blit()
             replay.Update(screen, event)
+            win.Update()
             old_time = new_time
         if new_time - fps_time >= 1.0:
             fps_o.Modify("string", str(frames))

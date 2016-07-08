@@ -9,8 +9,8 @@ import sys, os, traceback, string, time, json, random, datetime
 class Players:
     files = {}
     script_path = os.path.dirname(__file__)
-    files["tiles"] = script_path + "/img/tiles.png"
-    files["flairs"] =script_path + "/img/flair.png"
+    files["tiles"] = script_path + "/img/Tiles.png"
+    files["flairs"] =script_path + "/img/Flair.png"
     functions = {"tiles" : tiles_map
                  }
     balls = ("blue ball", "red ball")

@@ -10,8 +10,8 @@ import sys, os, traceback, string, time, json
 class GenMap:
     files = {}
     script_path = os.path.dirname(__file__)
-    files["tiles"] = script_path + "/img/tiles.png"
-    files["portal"] = script_path + "/img/portal.png"
+    files["tiles"] = script_path + "/img/Tiles.png"
+    files["portal"] = script_path + "/img/Portal.png"
     files["boost"] = script_path + "/img/Boost.png"
     files["blue boost"] = script_path + "/img/Blue Boost.png"
     files["red boost"] = script_path + "/img/Red Boost.png"
